@@ -33,7 +33,6 @@ import (
 	"io"
 	"os"
 	"path/filepath"
-	"sort"
 	"strings"
 	"time"
 
@@ -96,11 +95,8 @@ func planFingerprint(slides []domain.Slide, config FrameConfig, audioPaths []str
 	for _, s := range slides {
 		fmt.Fprintf(h, "slide=%d;title=%s;dur=%.3f\n", s.Number, s.Title, s.DurationSeconds)
 	}
-	// Audio paths, sorted for determinism
-	sorted := make([]string, len(audioPaths))
-	copy(sorted, audioPaths)
-	sort.Strings(sorted)
-	for _, p := range sorted {
+	// Audio paths – order is significant: different orderings produce different mixes.
+	for _, p := range audioPaths {
 		fmt.Fprintf(h, "audio=%s\n", p)
 	}
 	// Content hash from slides package

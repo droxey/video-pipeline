@@ -2,8 +2,9 @@ package quality
 
 import (
 	"fmt"
-	"github.com/nebula/course-video-pipeline/internal/domain"
 	"strings"
+
+	"github.com/nebula/course-video-pipeline/internal/domain"
 )
 
 func ValidateRecording(r *domain.Recording, durationAck bool) []string {

@@ -110,7 +110,7 @@ func (r *RemotionRenderer) RenderSlide(ctx context.Context, slide domain.Slide, 
 
 	if err := cmd.Run(); err != nil {
 		if renderCtx.Err() != nil {
-			return fmt.Errorf("remotion: slide %d render timed out after %s: %w", slide.Number, timeout, ctx.Err())
+			return fmt.Errorf("remotion: slide %d render timed out after %s: %w", slide.Number, timeout, renderCtx.Err())
 		}
 		return fmt.Errorf("remotion: slide %d render failed: %w\nstderr: %s",
 			slide.Number, err, stderr.String())

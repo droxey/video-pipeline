@@ -124,7 +124,7 @@ func TestReadUsage_Empty(t *testing.T) {
 	if err != nil {
 		t.Fatalf("ReadUsage empty: %v", err)
 	}
-	if records != nil {
-		t.Error("expected nil for missing usage file")
+	if len(records) != 0 {
+		t.Error("expected empty slice for missing usage file")
 	}
 }

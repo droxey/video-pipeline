@@ -10,10 +10,10 @@ import (
 )
 
 const (
-	manifestFile  = "run.json"
+	manifestFile   = "run.json"
 	approvalSubdir = "approvals"
-	rejectionFile = "rejected.json"
-	usageJSONL    = "usage.jsonl"
+	rejectionFile  = "rejected.json"
+	usageJSONL     = "usage.jsonl"
 )
 
 // ManifestPath returns the canonical path for the run manifest.
@@ -88,7 +88,7 @@ func ReadUsage(runDir string) ([]*domain.UsageRecord, error) {
 	path := filepath.Join(runDir, "manifests", usageJSONL)
 	f, err := os.Open(path)
 	if os.IsNotExist(err) {
-		return nil, nil
+		return []*domain.UsageRecord{}, nil
 	}
 	if err != nil {
 		return nil, fmt.Errorf("persistence: open %s: %w", path, err)

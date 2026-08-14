@@ -9,6 +9,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/nebula/course-video-pipeline/internal/providers"
 	"github.com/nebula/course-video-pipeline/internal/tts"
 )
 
@@ -260,15 +261,4 @@ func TestElevenLabs_StreamsLargeResponse(t *testing.T) {
 }
 
 // Verify ElevenLabsProvider satisfies the providers.TTS interface at compile time.
-var _ interface {
-	Synthesize(context.Context, string, string, io.Writer) (interface{}, error)
-} = nil // interface conformance is checked via compile-time assignment below
-
-func TestElevenLabs_ImplementsTTSInterface(t *testing.T) {
-	// This test verifies compile-time interface satisfaction.
-	var _ interface {
-		Synthesize(context.Context, string, string, io.Writer) (interface{}, error)
-	}
-	p := &tts.ElevenLabsProvider{APIKey: "k", BaseURL: "http://localhost"}
-	_ = p // satisfies providers.TTS (checked at build time via the import)
-}
+var _ providers.TTS = (*tts.ElevenLabsProvider)(nil)

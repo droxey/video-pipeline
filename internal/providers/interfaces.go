@@ -2,8 +2,9 @@ package providers
 
 import (
 	"context"
-	"github.com/nebula/course-video-pipeline/internal/domain"
 	"io"
+
+	"github.com/nebula/course-video-pipeline/internal/domain"
 )
 
 type Grain interface {
