@@ -1,1 +1,1 @@
-# Nebula Course Video Pipeline
+# Video Pipeline
