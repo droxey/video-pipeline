@@ -1,0 +1,7 @@
+# Invalid: schema_version is 0 (not 1), slug is blank, voice id missing.
+schema_version: 0
+profile: adult
+language: en
+fps: 30
+width: 1920
+height: 1080
