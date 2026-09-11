@@ -24,8 +24,7 @@ func main() {
 	case "version":
 		fmt.Printf("nebula-pipeline %s\n", version)
 	case "grain":
-		fmt.Fprintln(os.Stderr, "grain: not yet implemented (infrastructure slice)")
-		os.Exit(1)
+		runGrain(flag.Args()[1:])
 	case "parse":
 		fmt.Fprintln(os.Stderr, "parse: not yet implemented (infrastructure slice)")
 		os.Exit(1)
