@@ -1,0 +1,6 @@
+[
+  {"start": 330, "end": 4200, "text": "Welcome to the course on event-driven architecture.", "participant_id": "p-abc111", "speaker": "Dani Roxberry"},
+  {"start": 4500, "end": 9100, "text": "Why not call the next service directly?", "participant_id": "p-def222", "speaker": "Bob Chen"},
+  {"start": 9300, "end": 18000, "text": "Great question. Direct coupling creates hidden dependencies.", "participant_id": "p-abc111", "speaker": "Dani Roxberry"},
+  {"start": 18100, "end": 24500, "text": "So events act as the contract between services.", "participant_id": "p-abc111", "speaker": "Dani Roxberry"}
+]
